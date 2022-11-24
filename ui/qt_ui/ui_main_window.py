@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Main_window.ui'
+## Form generated from reading UI file 'ui_main_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.0
 ##
@@ -16,18 +16,22 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
-    QGraphicsView, QGridLayout, QGroupBox, QHeaderView,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QTableView, QToolButton, QWidget)
+    QGraphicsView, QGridLayout, QGroupBox, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QPushButton,
+    QScrollArea, QSizePolicy, QTableView, QToolButton,
+    QVBoxLayout, QWidget)
 
 class Ui_Main_ui(object):
     def setupUi(self, Main_ui):
         if not Main_ui.objectName():
             Main_ui.setObjectName(u"Main_ui")
-        Main_ui.resize(1128, 643)
+        Main_ui.resize(1201, 1098)
+        font = QFont()
+        font.setBold(False)
+        Main_ui.setFont(font)
         self.groupBox = QGroupBox(Main_ui)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 541, 351))
+        self.groupBox.setGeometry(QRect(10, 10, 541, 321))
         self.groupBox.setMinimumSize(QSize(541, 0))
         self.groupBox.setMaximumSize(QSize(1024, 16777215))
         self.import_path_button = QToolButton(self.groupBox)
@@ -47,7 +51,7 @@ class Ui_Main_ui(object):
         self.groupBox_4.setCheckable(False)
         self.gridLayoutWidget = QWidget(self.groupBox_4)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 20, 501, 171))
+        self.gridLayoutWidget.setGeometry(QRect(10, 20, 501, 201))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setVerticalSpacing(6)
@@ -160,9 +164,9 @@ class Ui_Main_ui(object):
 
         self.gridLayout.addWidget(self.ao_button, 5, 3, 1, 1)
 
-        self.subfolders_check = QCheckBox(self.groupBox_4)
+        self.subfolders_check = QCheckBox(self.groupBox)
         self.subfolders_check.setObjectName(u"subfolders_check")
-        self.subfolders_check.setGeometry(QRect(10, 200, 171, 17))
+        self.subfolders_check.setGeometry(QRect(20, 20, 171, 17))
         self.groupBox_2 = QGroupBox(Main_ui)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setGeometry(QRect(560, 10, 551, 351))
@@ -185,7 +189,7 @@ class Ui_Main_ui(object):
         self.image_preview.setMaximumSize(QSize(128, 128))
         self.gridLayoutWidget_2 = QWidget(self.texture_channel_picker)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(150, 20, 371, 171))
+        self.gridLayoutWidget_2.setGeometry(QRect(150, 20, 371, 181))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -277,13 +281,39 @@ class Ui_Main_ui(object):
         self.plus_button.setGeometry(QRect(470, 310, 61, 31))
         self.tableView = QTableView(Main_ui)
         self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(20, 370, 1091, 192))
+        self.tableView.setGeometry(QRect(20, 810, 1091, 192))
         self.start_button = QPushButton(Main_ui)
         self.start_button.setObjectName(u"start_button")
-        self.start_button.setGeometry(QRect(560, 590, 151, 41))
+        self.start_button.setGeometry(QRect(560, 1030, 151, 41))
         self.scan_button = QPushButton(Main_ui)
         self.scan_button.setObjectName(u"scan_button")
-        self.scan_button.setGeometry(QRect(400, 590, 151, 41))
+        self.scan_button.setGeometry(QRect(400, 1030, 151, 41))
+        self.add_pushbutton = QPushButton(Main_ui)
+        self.add_pushbutton.setObjectName(u"add_pushbutton")
+        self.add_pushbutton.setGeometry(QRect(30, 340, 75, 23))
+        self.clear_pushbutton = QPushButton(Main_ui)
+        self.clear_pushbutton.setObjectName(u"clear_pushbutton")
+        self.clear_pushbutton.setGeometry(QRect(460, 340, 75, 23))
+        self.scrollArea = QScrollArea(Main_ui)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QRect(30, 370, 841, 431))
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 839, 429))
+        self.horizontalLayout = QHBoxLayout(self.scrollAreaWidgetContents)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.mapwidget_layout = QVBoxLayout()
+        self.mapwidget_layout.setObjectName(u"mapwidget_layout")
+
+        self.horizontalLayout.addLayout(self.mapwidget_layout)
+
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.retranslateUi(Main_ui)
 
@@ -321,5 +351,7 @@ class Ui_Main_ui(object):
         self.plus_button.setText(QCoreApplication.translate("Main_ui", u"+", None))
         self.start_button.setText(QCoreApplication.translate("Main_ui", u"\u0421\u0442\u0430\u0440\u0442", None))
         self.scan_button.setText(QCoreApplication.translate("Main_ui", u"\u041f\u043e\u0438\u0441\u043a", None))
+        self.add_pushbutton.setText(QCoreApplication.translate("Main_ui", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+        self.clear_pushbutton.setText(QCoreApplication.translate("Main_ui", u"\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c", None))
     # retranslateUi
 

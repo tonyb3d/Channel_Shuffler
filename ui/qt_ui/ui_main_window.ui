@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1128</width>
-    <height>643</height>
+    <width>1201</width>
+    <height>1098</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -19,7 +25,7 @@
      <x>10</x>
      <y>10</y>
      <width>541</width>
-     <height>351</height>
+     <height>321</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -103,7 +109,7 @@
        <x>10</x>
        <y>20</y>
        <width>501</width>
-       <height>171</height>
+       <height>201</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -328,19 +334,19 @@
       </item>
      </layout>
     </widget>
-    <widget class="QCheckBox" name="subfolders_check">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>200</y>
-       <width>171</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Поиск в подпапках</string>
-     </property>
-    </widget>
+   </widget>
+   <widget class="QCheckBox" name="subfolders_check">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>171</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Поиск в подпапках</string>
+    </property>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
@@ -431,7 +437,7 @@
        <x>150</x>
        <y>20</y>
        <width>371</width>
-       <height>171</height>
+       <height>181</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
@@ -597,7 +603,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>370</y>
+     <y>810</y>
      <width>1091</width>
      <height>192</height>
     </rect>
@@ -607,7 +613,7 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>590</y>
+     <y>1030</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -620,7 +626,7 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>590</y>
+     <y>1030</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -628,6 +634,66 @@
    <property name="text">
     <string>Поиск</string>
    </property>
+  </widget>
+  <widget class="QPushButton" name="add_pushbutton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clear_pushbutton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>340</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>841</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>839</width>
+      <height>429</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="mapwidget_layout"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
  <resources/>
