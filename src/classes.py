@@ -6,33 +6,17 @@ class Material():
         super().__init__()
         
         self.name = ()
-        self.albedo = ()
-        self.metallic = ()
-        self.roughness = ()
-        self.ao = ()
-        self.normal = ()
-        self.height = ()
+        self.maps = dict() # словарь в который складываем пары "название": "путь к текстуре"
+        self.output_scheme = dict() # сюда кладем пары "название_текстуры": "4 кортежа(название, канал)""
 
 
     def set_name(self):
         pass
 
-    def set_albedo(self):
+    def add_map(self):
         pass
 
-    def set_metallic(self):
-        pass
-
-    def set_roughness(self):
-        pass
-
-    def set_ao(self):
-        pass
-
-    def set_normal(self):
-        pass
-
-    def set_height(self):
+    def remove_map(self):
         pass
 
     def set_export_path(self):
