@@ -11,38 +11,12 @@ class MainWindow(QMainWindow):
         self.ui = Ui_Main_ui()
         self.ui.setupUi(self)
         self.map_id_counter: int = 0
-        self.init_ui()
-
-
-    def init_ui(self):
         _format_list = ["jpg", "tiff", "png", "tga"]
 
         self.setWindowTitle("Channel_shuffler")
 
-        self.ui.add_pushbutton.clicked.connect(self.add_mapwidget)
-        self.ui.clear_pushbutton.clicked.connect(self.clear_mapwidgets_area)
-
         self.ui.filetype_combobox.addItems(_format_list)
         self.ui.filetype_combobox.setCurrentIndex(1)
-
-        self.ui.input_metalness_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_metalness_mask.setText("metalness, metallic")
-
-        self.ui.input_height_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_height_mask.setText("height, displacement")
-
-        self.ui.input_roughness_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_roughness_mask.setText("roughness, smoothness")
-
-        self.ui.input_basecolor_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_basecolor_mask.setText("base_color, color, albedo, diffuse")
-
-        self.ui.input_normal_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_normal_mask.setText("normal, tangent") 
-
-        self.ui.input_ao_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        self.ui.input_ao_mask.setText("ao, ambient_occlusion")
-
 
         self.ui.red_checkbox.setChecked(True)
         self.ui.green_checkbox.setChecked(True)
@@ -52,6 +26,22 @@ class MainWindow(QMainWindow):
         self.ui.export_path_button.clicked.connect(self.set_export_path)
 
         self.ui.texture_output_mask.setPlaceholderText("Суффикс")
+
+        # self.ui.input_metalness_mask.setPlaceholderText("Ключевые слова, через запятую.")
+        # self.ui.input_metalness_mask.setText("metalness, metallic")
+
+        self.ui.add_pushbutton.clicked.connect(self.add_mapwidget)
+        self.ui.clear_pushbutton.clicked.connect(self.clear_mapwidgets_area)
+        
+
+
+    def set_import_path(self):
+        import_path = QFileDialog.getExistingDirectory(self, "Выберите папку")
+        self.ui.import_path.setText(import_path)
+
+    def set_export_path(self):
+        export_path = QFileDialog.getExistingDirectory(self, "Выберите папку")
+        self.ui.export_path.setText(export_path)
 
     @Slot()
     def add_mapwidget(self):
@@ -66,22 +56,13 @@ class MainWindow(QMainWindow):
             item = self.ui.mapwidget_layout.takeAt(0)
             item.widget().deleteLater()
             self.map_id_counter = 0
-    
+        
     @Slot(int)
     def delete_mapwidget(self, wid: int):
         print(f"Id удаляемого виджета: {wid}")
         item = self.sender()
-        # self.ui.mapwidget_layout.removeWidget(widget)
-        # widget.deleteLater()
-        # item = self.ui.mapwidget_layout.takeAt(wid)
-        self.ui.mapwidget_layout.removeWidget(item)
-        item.widget().deleteLater()
-
-
-    def set_import_path(self):
-        import_path = QFileDialog.getExistingDirectory(self, "Выберите папку")
-        self.ui.import_path.setText(import_path)
-
-    def set_export_path(self):
-        export_path = QFileDialog.getExistingDirectory(self, "Выберите папку")
-        self.ui.export_path.setText(export_path)
+        self.ui.mapwidget_layout.takeAt(item)
+        print(item)
+        # item.setParent(None)
+        # self.ui.mapwidget_layout.removeWidget(item)
+        # item.deleteLater()

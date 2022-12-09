@@ -17,21 +17,21 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
     QGraphicsView, QGridLayout, QGroupBox, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QPushButton,
-    QScrollArea, QSizePolicy, QTableView, QToolButton,
-    QVBoxLayout, QWidget)
+    QLabel, QLineEdit, QPushButton, QScrollArea,
+    QSizePolicy, QSpacerItem, QToolButton, QVBoxLayout,
+    QWidget)
 
 class Ui_Main_ui(object):
     def setupUi(self, Main_ui):
         if not Main_ui.objectName():
             Main_ui.setObjectName(u"Main_ui")
-        Main_ui.resize(1201, 1098)
+        Main_ui.resize(1207, 769)
         font = QFont()
         font.setBold(False)
         Main_ui.setFont(font)
         self.groupBox = QGroupBox(Main_ui)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 541, 321))
+        self.groupBox.setGeometry(QRect(10, 10, 621, 721))
         self.groupBox.setMinimumSize(QSize(541, 0))
         self.groupBox.setMaximumSize(QSize(1024, 16777215))
         self.import_path_button = QToolButton(self.groupBox)
@@ -46,130 +46,45 @@ class Ui_Main_ui(object):
         self.label.setGeometry(QRect(21, 40, 91, 16))
         self.groupBox_4 = QGroupBox(self.groupBox)
         self.groupBox_4.setObjectName(u"groupBox_4")
-        self.groupBox_4.setGeometry(QRect(10, 70, 521, 231))
+        self.groupBox_4.setGeometry(QRect(10, 70, 601, 651))
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox_4.sizePolicy().hasHeightForWidth())
+        self.groupBox_4.setSizePolicy(sizePolicy)
         self.groupBox_4.setFlat(False)
         self.groupBox_4.setCheckable(False)
-        self.gridLayoutWidget = QWidget(self.groupBox_4)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 20, 501, 201))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setVerticalSpacing(6)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.gridLayoutWidget)
-        self.label_8.setObjectName(u"label_8")
+        self.horizontalLayout_2 = QHBoxLayout(self.groupBox_4)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.scrollArea = QScrollArea(self.groupBox_4)
+        self.scrollArea.setObjectName(u"scrollArea")
+        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 579, 616))
+        self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.mapwidget_gridLayout = QGridLayout()
+        self.mapwidget_gridLayout.setObjectName(u"mapwidget_gridLayout")
 
-        self.gridLayout.addWidget(self.label_8, 2, 0, 1, 1)
+        self.verticalLayout_2.addLayout(self.mapwidget_gridLayout)
 
-        self.label_9 = QLabel(self.gridLayoutWidget)
-        self.label_9.setObjectName(u"label_9")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout.addWidget(self.label_9, 0, 0, 1, 1)
+        self.verticalLayout_2.addItem(self.verticalSpacer)
 
-        self.label_10 = QLabel(self.gridLayoutWidget)
-        self.label_10.setObjectName(u"label_10")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        self.gridLayout.addWidget(self.label_10, 3, 0, 1, 1)
-
-        self.label_6 = QLabel(self.gridLayoutWidget)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout.addWidget(self.label_6, 1, 0, 1, 1)
-
-        self.input_metalness_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_metalness_mask.setObjectName(u"input_metalness_mask")
-        self.input_metalness_mask.setMinimumSize(QSize(350, 0))
-        self.input_metalness_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_metalness_mask, 0, 2, 1, 1)
-
-        self.input_normal_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_normal_mask.setObjectName(u"input_normal_mask")
-        self.input_normal_mask.setMinimumSize(QSize(350, 0))
-        self.input_normal_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_normal_mask, 4, 2, 1, 1)
-
-        self.input_height_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_height_mask.setObjectName(u"input_height_mask")
-        self.input_height_mask.setMinimumSize(QSize(350, 0))
-        self.input_height_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_height_mask, 1, 2, 1, 1)
-
-        self.label_7 = QLabel(self.gridLayoutWidget)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout.addWidget(self.label_7, 4, 0, 1, 1)
-
-        self.input_roughness_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_roughness_mask.setObjectName(u"input_roughness_mask")
-        self.input_roughness_mask.setMinimumSize(QSize(350, 0))
-        self.input_roughness_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_roughness_mask, 2, 2, 1, 1)
-
-        self.input_basecolor_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_basecolor_mask.setObjectName(u"input_basecolor_mask")
-        self.input_basecolor_mask.setMinimumSize(QSize(350, 0))
-        self.input_basecolor_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_basecolor_mask, 3, 2, 1, 1)
-
-        self.height_button = QToolButton(self.gridLayoutWidget)
-        self.height_button.setObjectName(u"height_button")
-        self.height_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.height_button, 1, 3, 1, 1)
-
-        self.roughness_button = QToolButton(self.gridLayoutWidget)
-        self.roughness_button.setObjectName(u"roughness_button")
-        self.roughness_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.roughness_button, 2, 3, 1, 1)
-
-        self.metalness_button = QToolButton(self.gridLayoutWidget)
-        self.metalness_button.setObjectName(u"metalness_button")
-        self.metalness_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.metalness_button, 0, 3, 1, 1)
-
-        self.normal_button = QToolButton(self.gridLayoutWidget)
-        self.normal_button.setObjectName(u"normal_button")
-        self.normal_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.normal_button, 4, 3, 1, 1)
-
-        self.basecolor_button = QToolButton(self.gridLayoutWidget)
-        self.basecolor_button.setObjectName(u"basecolor_button")
-        self.basecolor_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.basecolor_button, 3, 3, 1, 1)
-
-        self.label_11 = QLabel(self.gridLayoutWidget)
-        self.label_11.setObjectName(u"label_11")
-
-        self.gridLayout.addWidget(self.label_11, 5, 0, 1, 1)
-
-        self.input_ao_mask = QLineEdit(self.gridLayoutWidget)
-        self.input_ao_mask.setObjectName(u"input_ao_mask")
-        self.input_ao_mask.setMinimumSize(QSize(350, 0))
-        self.input_ao_mask.setMaximumSize(QSize(500, 16777215))
-
-        self.gridLayout.addWidget(self.input_ao_mask, 5, 2, 1, 1)
-
-        self.ao_button = QToolButton(self.gridLayoutWidget)
-        self.ao_button.setObjectName(u"ao_button")
-        self.ao_button.setMinimumSize(QSize(32, 0))
-
-        self.gridLayout.addWidget(self.ao_button, 5, 3, 1, 1)
+        self.horizontalLayout_2.addWidget(self.scrollArea)
 
         self.subfolders_check = QCheckBox(self.groupBox)
         self.subfolders_check.setObjectName(u"subfolders_check")
         self.subfolders_check.setGeometry(QRect(20, 20, 171, 17))
         self.groupBox_2 = QGroupBox(Main_ui)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setGeometry(QRect(560, 10, 551, 351))
+        self.groupBox_2.setGeometry(QRect(640, 10, 551, 351))
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(20, 40, 91, 16))
@@ -279,41 +194,18 @@ class Ui_Main_ui(object):
         self.plus_button = QPushButton(self.groupBox_2)
         self.plus_button.setObjectName(u"plus_button")
         self.plus_button.setGeometry(QRect(470, 310, 61, 31))
-        self.tableView = QTableView(Main_ui)
-        self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(20, 810, 1091, 192))
         self.start_button = QPushButton(Main_ui)
         self.start_button.setObjectName(u"start_button")
-        self.start_button.setGeometry(QRect(560, 1030, 151, 41))
+        self.start_button.setGeometry(QRect(850, 700, 151, 41))
         self.scan_button = QPushButton(Main_ui)
         self.scan_button.setObjectName(u"scan_button")
-        self.scan_button.setGeometry(QRect(400, 1030, 151, 41))
+        self.scan_button.setGeometry(QRect(690, 700, 151, 41))
         self.add_pushbutton = QPushButton(Main_ui)
         self.add_pushbutton.setObjectName(u"add_pushbutton")
-        self.add_pushbutton.setGeometry(QRect(30, 340, 75, 23))
+        self.add_pushbutton.setGeometry(QRect(40, 730, 75, 23))
         self.clear_pushbutton = QPushButton(Main_ui)
         self.clear_pushbutton.setObjectName(u"clear_pushbutton")
-        self.clear_pushbutton.setGeometry(QRect(460, 340, 75, 23))
-        self.scrollArea = QScrollArea(Main_ui)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setGeometry(QRect(30, 370, 841, 431))
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
-        self.scrollArea.setSizePolicy(sizePolicy)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 839, 429))
-        self.horizontalLayout = QHBoxLayout(self.scrollAreaWidgetContents)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.mapwidget_layout = QVBoxLayout()
-        self.mapwidget_layout.setObjectName(u"mapwidget_layout")
-
-        self.horizontalLayout.addLayout(self.mapwidget_layout)
-
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.clear_pushbutton.setGeometry(QRect(530, 730, 75, 23))
 
         self.retranslateUi(Main_ui)
 
@@ -326,18 +218,6 @@ class Ui_Main_ui(object):
         self.import_path_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
         self.label.setText(QCoreApplication.translate("Main_ui", u"\u041f\u0443\u0442\u044c \u0438\u043c\u043f\u043e\u0440\u0442\u0430", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("Main_ui", u"\u041c\u0430\u0441\u043a\u0438 \u0438\u043c\u0435\u043d \u0444\u0430\u0439\u043b\u043e\u0432", None))
-        self.label_8.setText(QCoreApplication.translate("Main_ui", u"Roughness", None))
-        self.label_9.setText(QCoreApplication.translate("Main_ui", u"Metalness", None))
-        self.label_10.setText(QCoreApplication.translate("Main_ui", u"Base Color", None))
-        self.label_6.setText(QCoreApplication.translate("Main_ui", u"Height", None))
-        self.label_7.setText(QCoreApplication.translate("Main_ui", u"Normal", None))
-        self.height_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
-        self.roughness_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
-        self.metalness_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
-        self.normal_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
-        self.basecolor_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
-        self.label_11.setText(QCoreApplication.translate("Main_ui", u"AO", None))
-        self.ao_button.setText(QCoreApplication.translate("Main_ui", u"...", None))
         self.subfolders_check.setText(QCoreApplication.translate("Main_ui", u"\u041f\u043e\u0438\u0441\u043a \u0432 \u043f\u043e\u0434\u043f\u0430\u043f\u043a\u0430\u0445", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("Main_ui", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442", None))
         self.label_2.setText(QCoreApplication.translate("Main_ui", u"\u041f\u0443\u0442\u044c \u044d\u043a\u0441\u043f\u043e\u0440\u0442\u0430", None))

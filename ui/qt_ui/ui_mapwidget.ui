@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>707</width>
-    <height>80</height>
+    <height>78</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -36,6 +36,12 @@
      </property>
      <property name="title">
       <string>GroupBox</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>

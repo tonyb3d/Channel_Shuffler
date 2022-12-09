@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1201</width>
-    <height>1098</height>
+    <width>1207</width>
+    <height>769</height>
    </rect>
   </property>
   <property name="font">
@@ -24,8 +24,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>541</width>
-     <height>321</height>
+     <width>621</width>
+     <height>721</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -90,9 +90,15 @@
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>521</width>
-      <height>231</height>
+      <width>601</width>
+      <height>651</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="title">
      <string>Маски имен файлов</string>
@@ -103,237 +109,49 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>501</width>
-       <height>201</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="verticalSpacing">
-       <number>6</number>
-      </property>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>Roughness</string>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>579</width>
+          <height>616</height>
+         </rect>
         </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="mapwidget_gridLayout"/>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Metalness</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>Base Color</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Height</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLineEdit" name="input_metalness_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLineEdit" name="input_normal_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="input_height_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Normal</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="input_roughness_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QLineEdit" name="input_basecolor_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QToolButton" name="height_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QToolButton" name="roughness_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QToolButton" name="metalness_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="3">
-       <widget class="QToolButton" name="normal_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QToolButton" name="basecolor_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="text">
-         <string>AO</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QLineEdit" name="input_ao_mask">
-        <property name="minimumSize">
-         <size>
-          <width>350</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>500</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QToolButton" name="ao_button">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QCheckBox" name="subfolders_check">
     <property name="geometry">
@@ -352,7 +170,7 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>640</x>
      <y>10</y>
      <width>551</width>
      <height>351</height>
@@ -599,21 +417,11 @@
     </property>
    </widget>
   </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>810</y>
-     <width>1091</width>
-     <height>192</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="start_button">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>1030</y>
+     <x>850</x>
+     <y>700</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -625,8 +433,8 @@
   <widget class="QPushButton" name="scan_button">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>1030</y>
+     <x>690</x>
+     <y>700</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -638,8 +446,8 @@
   <widget class="QPushButton" name="add_pushbutton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>340</y>
+     <x>40</x>
+     <y>730</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -651,8 +459,8 @@
   <widget class="QPushButton" name="clear_pushbutton">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>340</y>
+     <x>530</x>
+     <y>730</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -660,40 +468,6 @@
    <property name="text">
     <string>Очистить</string>
    </property>
-  </widget>
-  <widget class="QScrollArea" name="scrollArea">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>370</y>
-     <width>841</width>
-     <height>431</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>839</width>
-      <height>429</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="mapwidget_layout"/>
-     </item>
-    </layout>
-   </widget>
   </widget>
  </widget>
  <resources/>

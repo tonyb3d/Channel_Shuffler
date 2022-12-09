@@ -23,7 +23,7 @@ class Ui_MapWidget(object):
     def setupUi(self, MapWidget):
         if not MapWidget.objectName():
             MapWidget.setObjectName(u"MapWidget")
-        MapWidget.resize(707, 80)
+        MapWidget.resize(707, 78)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -42,6 +42,8 @@ class Ui_MapWidget(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy1)
+        self.groupBox.setFlat(False)
+        self.groupBox.setCheckable(False)
         self.horizontalLayout = QHBoxLayout(self.groupBox)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.mapName = QLineEdit(self.groupBox)
