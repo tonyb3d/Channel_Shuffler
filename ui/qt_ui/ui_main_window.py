@@ -17,9 +17,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
     QGraphicsView, QGridLayout, QGroupBox, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QToolButton, QVBoxLayout,
-    QWidget)
+    QLabel, QLineEdit, QListWidget, QListWidgetItem,
+    QPushButton, QScrollArea, QSizePolicy, QToolButton,
+    QVBoxLayout, QWidget)
 
 class Ui_Main_ui(object):
     def setupUi(self, Main_ui):
@@ -66,14 +66,10 @@ class Ui_Main_ui(object):
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 579, 616))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.mapwidget_gridLayout = QGridLayout()
-        self.mapwidget_gridLayout.setObjectName(u"mapwidget_gridLayout")
+        self.mapwidget_listwidget = QListWidget(self.scrollAreaWidgetContents)
+        self.mapwidget_listwidget.setObjectName(u"mapwidget_listwidget")
 
-        self.verticalLayout_2.addLayout(self.mapwidget_gridLayout)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_2.addItem(self.verticalSpacer)
+        self.verticalLayout_2.addWidget(self.mapwidget_listwidget)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 

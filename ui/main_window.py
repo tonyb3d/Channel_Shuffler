@@ -1,8 +1,8 @@
-from PySide6.QtWidgets import QMainWindow, QFileDialog
+from PySide6.QtWidgets import QMainWindow, QFileDialog, QListWidgetItem, QAbstractItemView
 from PySide6.QtCore import Slot
 
 from ui.qt_ui.ui_main_window import Ui_Main_ui
-from ui.mapwidget import MapWidget
+from ui.mapwidget import Map_Widget
 
 
 class MainWindow(QMainWindow):
@@ -10,6 +10,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_Main_ui()
         self.ui.setupUi(self)
+        self.my_widgets_dict: dict[int, QListWidgetItem] = {}
         self.map_id_counter: int = 0
         _format_list = ["jpg", "tiff", "png", "tga"]
 
@@ -27,14 +28,9 @@ class MainWindow(QMainWindow):
 
         self.ui.texture_output_mask.setPlaceholderText("Суффикс")
 
-        # self.ui.input_metalness_mask.setPlaceholderText("Ключевые слова, через запятую.")
-        # self.ui.input_metalness_mask.setText("metalness, metallic")
-
         self.ui.add_pushbutton.clicked.connect(self.add_mapwidget)
-        self.ui.clear_pushbutton.clicked.connect(self.clear_mapwidgets_area)
+        self.ui.clear_pushbutton.clicked.connect(self.clear_mapwidgets_list)
         
-
-
     def set_import_path(self):
         import_path = QFileDialog.getExistingDirectory(self, "Выберите папку")
         self.ui.import_path.setText(import_path)
@@ -45,24 +41,26 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def add_mapwidget(self):
+        widget = Map_Widget(self.map_id_counter)
+        print(self.map_id_counter)
+        my_item = QListWidgetItem(self.ui.mapwidget_listwidget)
+        my_item.setSizeHint(widget.sizeHint())
+        self.my_widgets_dict[widget.my_ID] = my_item
+        self.ui.mapwidget_listwidget.addItem(my_item)
+        self.ui.mapwidget_listwidget.setItemWidget(my_item, widget)
+        widget.delete.connect(self.delete_mapwidget)
+
         self.map_id_counter += 1
-        map_widget = MapWidget(self.map_id_counter)
-        self.ui.mapwidget_layout.addWidget(map_widget)
-        map_widget.delete.connect(self.delete_mapwidget)
+
 
     @Slot()
-    def clear_mapwidgets_area(self):
-        while self.ui.mapwidget_layout.count() > 0:
-            item = self.ui.mapwidget_layout.takeAt(0)
-            item.widget().deleteLater()
-            self.map_id_counter = 0
+    def clear_mapwidgets_list(self):
+        self.ui.mapwidget_listwidget.clear()
+        self.map_id_counter = 0
         
     @Slot(int)
-    def delete_mapwidget(self, wid: int):
-        print(f"Id удаляемого виджета: {wid}")
-        item = self.sender()
-        self.ui.mapwidget_layout.takeAt(item)
-        print(item)
-        # item.setParent(None)
-        # self.ui.mapwidget_layout.removeWidget(item)
-        # item.deleteLater()
+    def delete_mapwidget(self):
+        widget = self.sender()
+        my_item = self.my_widgets_dict[widget.my_ID]
+        self.ui.mapwidget_listwidget.takeItem(self.ui.mapwidget_listwidget.row(my_item))
+        del self.my_widgets_dict[widget.my_ID]

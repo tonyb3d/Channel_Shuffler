@@ -5,19 +5,19 @@ from ui.qt_ui.ui_mapwidget import Ui_MapWidget
 
 
 
-class MapWidget(QWidget):
+class Map_Widget(QWidget):
     delete = Signal(int)
 
 
-    def __init__(self, id_widget: int, parent=None):
-        super(MapWidget, self).__init__(parent)
+    def __init__(self, idw: int):
+        super(Map_Widget, self).__init__()
         self.ui = Ui_MapWidget()
         self.ui.setupUi(self)
-        self.id_widget = id_widget
-        self.ui.groupBox.setTitle(str(id_widget))
+        self.my_ID = idw
+        self.ui.groupBox.setTitle(str(f"Widget {idw}"))
         self.ui.pushButton.clicked.connect(self.press_del)
 
 
     @Slot()
     def press_del(self):
-        self.delete.emit(self.id_widget)
+        self.delete.emit(self.my_ID)
