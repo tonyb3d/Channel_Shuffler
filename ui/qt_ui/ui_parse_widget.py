@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mapwidget.ui'
+## Form generated from reading UI file 'ui_parse_widget.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.0
 ##
@@ -19,23 +19,23 @@ from PySide6.QtWidgets import (QApplication, QGroupBox, QHBoxLayout, QLineEdit,
     QPushButton, QSizePolicy, QSpacerItem, QToolButton,
     QVBoxLayout, QWidget)
 
-class Ui_MapWidget(object):
-    def setupUi(self, MapWidget):
-        if not MapWidget.objectName():
-            MapWidget.setObjectName(u"MapWidget")
-        MapWidget.resize(707, 78)
+class Ui_ParseWidget(object):
+    def setupUi(self, ParseWidget):
+        if not ParseWidget.objectName():
+            ParseWidget.setObjectName(u"ParseWidget")
+        ParseWidget.resize(519, 80)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MapWidget.sizePolicy().hasHeightForWidth())
-        MapWidget.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(ParseWidget.sizePolicy().hasHeightForWidth())
+        ParseWidget.setSizePolicy(sizePolicy)
         font = QFont()
         font.setFamilies([u"Iosevka"])
         font.setPointSize(10)
-        MapWidget.setFont(font)
-        self.verticalLayout = QVBoxLayout(MapWidget)
+        ParseWidget.setFont(font)
+        self.verticalLayout = QVBoxLayout(ParseWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.groupBox = QGroupBox(MapWidget)
+        self.groupBox = QGroupBox(ParseWidget)
         self.groupBox.setObjectName(u"groupBox")
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
         sizePolicy1.setHorizontalStretch(0)
@@ -62,33 +62,33 @@ class Ui_MapWidget(object):
 
         self.horizontalLayout.addWidget(self.mapMask)
 
-        self.toolButton = QToolButton(self.groupBox)
-        self.toolButton.setObjectName(u"toolButton")
+        self.mapPathButton = QToolButton(self.groupBox)
+        self.mapPathButton.setObjectName(u"mapPathButton")
 
-        self.horizontalLayout.addWidget(self.toolButton)
+        self.horizontalLayout.addWidget(self.mapPathButton)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(30, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_2)
 
-        self.pushButton = QPushButton(self.groupBox)
-        self.pushButton.setObjectName(u"pushButton")
+        self.deleteButton = QPushButton(self.groupBox)
+        self.deleteButton.setObjectName(u"deleteButton")
 
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.deleteButton)
 
 
         self.verticalLayout.addWidget(self.groupBox)
 
 
-        self.retranslateUi(MapWidget)
+        self.retranslateUi(ParseWidget)
 
-        QMetaObject.connectSlotsByName(MapWidget)
+        QMetaObject.connectSlotsByName(ParseWidget)
     # setupUi
 
-    def retranslateUi(self, MapWidget):
-        MapWidget.setWindowTitle(QCoreApplication.translate("MapWidget", u"Form", None))
-        self.groupBox.setTitle(QCoreApplication.translate("MapWidget", u"GroupBox", None))
-        self.toolButton.setText(QCoreApplication.translate("MapWidget", u"...", None))
-        self.pushButton.setText(QCoreApplication.translate("MapWidget", u"Delete", None))
+    def retranslateUi(self, ParseWidget):
+        ParseWidget.setWindowTitle(QCoreApplication.translate("ParseWidget", u"Form", None))
+        self.groupBox.setTitle(QCoreApplication.translate("ParseWidget", u"GroupBox", None))
+        self.mapPathButton.setText(QCoreApplication.translate("ParseWidget", u"...", None))
+        self.deleteButton.setText(QCoreApplication.translate("ParseWidget", u"Delete", None))
     # retranslateUi
 

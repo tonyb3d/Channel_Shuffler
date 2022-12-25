@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MapWidget</class>
- <widget class="QWidget" name="MapWidget">
+ <class>ParseWidget</class>
+ <widget class="QWidget" name="ParseWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>707</width>
-    <height>78</height>
+    <width>519</width>
+    <height>80</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -74,7 +74,7 @@
        <widget class="QLineEdit" name="mapMask"/>
       </item>
       <item>
-       <widget class="QToolButton" name="toolButton">
+       <widget class="QToolButton" name="mapPathButton">
         <property name="text">
          <string>...</string>
         </property>
@@ -90,14 +90,14 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>40</width>
+          <width>30</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="deleteButton">
         <property name="text">
          <string>Delete</string>
         </property>
