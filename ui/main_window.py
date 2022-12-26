@@ -19,17 +19,8 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Channel_shuffler")
 
-        # self.ui.filetype_combobox.addItems(_format_list)
-        # self.ui.filetype_combobox.setCurrentIndex(1)
-
-        # self.ui.red_checkbox.setChecked(True)
-        # self.ui.green_checkbox.setChecked(True)
-        # self.ui.blue_checkbox.setChecked(True)
-
         self.ui.import_path_button.clicked.connect(self.set_import_path)
         self.ui.export_path_button.clicked.connect(self.set_export_path)
-
-        # self.ui.texture_output_mask.setPlaceholderText("Суффикс")
 
         self.ui.parser_add_button.clicked.connect(self.add_parsewidget)
         self.ui.parser_clear_button.clicked.connect(self.clear_parsewidget_list)
