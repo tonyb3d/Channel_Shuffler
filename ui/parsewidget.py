@@ -13,18 +13,23 @@ class Parse_Widget(QWidget):
         super(Parse_Widget, self).__init__()
         self.ui = Ui_ParseWidget()
         self.ui.setupUi(self)
+        self.set_tooltips()
 
         self.ui.mapName.setPlaceholderText("Название")
-        self.ui.mapName.setToolTip("Введите название текстуры")
-
         self.ui.mapMask.setPlaceholderText("Маска")
-        self.ui.mapMask.setToolTip("Ключевые слова для поиска текстуры, разделенные запятой")
 
         self.ui.mapPathButton.clicked.connect(self.set_path)
 
         self.my_ID = idw
         self.ui.groupBox.setTitle(str(f"Widget {idw}"))
         self.ui.deleteButton.clicked.connect(self.press_del)
+
+    def set_tooltips(self):
+        self.ui.mapName.setToolTip("Введите название текстуры")
+        self.ui.mapMask.setToolTip("Ключевые слова для поиска текстуры, разделенные запятой")
+        self.ui.mapPathButton.setToolTip("Нажмите, если нужно выбрать конкретный файл, а не искать по маске")
+        self.ui.deleteButton.setToolTip("Удалить виджет")
+
 
     def set_path(self):
         import_path = QFileDialog.getExistingDirectory(self, "Выберите папку")

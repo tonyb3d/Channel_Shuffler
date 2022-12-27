@@ -180,10 +180,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.subfolder_create_checkbox)
 
-        self.checkBox = QCheckBox(self.groupBox)
-        self.checkBox.setObjectName(u"checkBox")
+        self.rewrite_files_checkbox = QCheckBox(self.groupBox)
+        self.rewrite_files_checkbox.setObjectName(u"rewrite_files_checkbox")
 
-        self.horizontalLayout_10.addWidget(self.checkBox)
+        self.horizontalLayout_10.addWidget(self.rewrite_files_checkbox)
 
 
         self.verticalLayout_8.addLayout(self.horizontalLayout_10)
@@ -303,7 +303,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u044c \u044d\u043a\u0441\u043f\u043e\u0440\u0442\u0430", None))
         self.export_path_button.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.subfolder_create_checkbox.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0437\u0434\u0430\u0432\u0430\u0442\u044c \u043f\u043e\u0434\u043f\u0430\u043f\u043a\u0438", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0437\u0430\u043f\u0438\u0441\u044b\u0432\u0430\u0442\u044c \u0444\u0430\u0439\u043b\u044b", None))
+        self.rewrite_files_checkbox.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0437\u0430\u043f\u0438\u0441\u044b\u0432\u0430\u0442\u044c \u0444\u0430\u0439\u043b\u044b", None))
         self.constructor_add_button.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
         self.constructor_start_button.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430", None))
         self.constructor_clear_button.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c", None))

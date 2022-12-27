@@ -6,13 +6,14 @@ from ui.qt_ui.ui_constructor_widget import Ui_ConstructorWidget
 class Constructor_Widget(QWidget):
     delete = Signal(int)
 
-    def __init__(self, idw: int):
+    def __init__(self, idw: int, _format_list: list):
         super(Constructor_Widget, self).__init__()
         self.ui = Ui_ConstructorWidget()
         self.ui.setupUi(self)
+        self.set_tooltips()
 
-        # self.ui.filetype_combobox.addItems(_format_list)
-        # self.ui.filetype_combobox.setCurrentIndex(1)
+        self.ui.filetype_combobox.addItems(_format_list)
+        self.ui.filetype_combobox.setCurrentIndex(1)
 
         self.ui.red_checkbox.setChecked(True)
         self.ui.green_checkbox.setChecked(True)
@@ -23,6 +24,7 @@ class Constructor_Widget(QWidget):
         self.ui.texture_channel_picker.setTitle(str(f"Texture {idw}"))
         self.ui.deleteButton.clicked.connect(self.press_del)
 
+    def set_tooltips(self):
         self.ui.texture_output_mask.setPlaceholderText("Суффикс названия")
         self.ui.texture_output_mask.setToolTip("Будет добавлен к названию текстуры")
         self.ui.filetype_combobox.setToolTip("Формат файла, в который будет сохранена текстура")
